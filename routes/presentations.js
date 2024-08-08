@@ -3,18 +3,8 @@ const router = express.Router();
 const Presentation = require('../models/presentation');
 const Slide = require('../models/slide');
 
-// // Create a new presentation
-// router.post('/', async (req, res) => {
-//   try {
-//     const presentation = new Presentation(req.body);
-//     await presentation.save();
-//     res.status(201).json(presentation);
-//   } catch (error) {
-//     res.status(400).json({ error: error.message });
-//   }
-// });
 // Create a new presentation and slide with data
-router.post('/', async (req, res) => { // before /withSlides
+router.post('/', async (req, res) => { 
     try {
       const { title, authors, dateOfPublishment, slides } = req.body;
   
